@@ -18,13 +18,6 @@ if($action == "index"){
 
   header("Location: /recette");
   exit;
-}else if($action == "add"){
-
-  $name = $_POST["name"];
-  $new_id = recette_add_one($pdo, $name);
-
-  header("Location: /recette");
-  exit;
 
 }else if($action == "show"){
 
