@@ -3,10 +3,9 @@
 /**************
  * RECETTE CONTROLLER
  *************/
+require_once("models/recetteModel.php");
 
 if($action == "index"){
-
-  require_once("models/recetteModel.php");
 
   $recettes = recette_get_all($pdo);
 
@@ -14,7 +13,11 @@ if($action == "index"){
 
 }else if($action == "add"){
 
-  var_dump("CONTROLLER RECETTE / ACTION ADD");
+  $name = $_POST["name"];
+  $new_id = recette_add_one($pdo, $name);
+
+  header("Location: /recette");
+  exit;
 }else{
   var_dump("ACTION NOT FOUND");
 }
