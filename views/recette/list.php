@@ -8,7 +8,11 @@
   <h1>Liste de recettes</h1>
   <ul>
     <?php foreach ($recettes as $recette): ?>
-      <li><?php echo $recette["name"];?></li>
+      <li>
+        <a href="/recette/show?id=<?php echo $recette['id']?>">
+          <?php echo $recette["name"];?>
+        </a>
+      </li>
     <?php endforeach ?>
   </ul>
 

@@ -17,3 +17,11 @@ function recette_add_one($pdo, $name){
   $id = $pdo->lastInsertId();
   return $id;
 }
+
+function recette_get_one($pdo, $id){
+  $q = "SELECT * FROM recette WHERE id = :id";
+  $stmt = $pdo->prepare($q);
+  $stmt->execute([":id" => $id]);
+  $recette = $stmt->fetch(PDO::FETCH_ASSOC);
+  return $recette;
+}
