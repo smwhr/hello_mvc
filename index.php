@@ -25,7 +25,6 @@ $pdo = new PDO('mysql:dbname='.$secret["db"]["dbname"].';host='.$secret["db"]["h
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-
 // on va décider du controller qui va gérer
 if($controller == "main"){
   require_once("controllers/mainController.php");

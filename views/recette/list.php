@@ -11,6 +11,11 @@
       <li><?php echo $recette["name"];?></li>
     <?php endforeach ?>
   </ul>
+
+  <form method="POST" action="/recette/add">
+    <input type="text" name="name">
+    <button type="submit">Ajouter</button>
+  </form>
   
 </body>
 </html>
