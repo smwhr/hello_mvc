@@ -32,6 +32,8 @@ if($controller == "main"){
   require_once("controllers/helloController.php");
 }else if($controller == "recette"){
   require_once("controllers/recetteController.php");
+}else if($controller == "ingredient"){
+  require_once("controllers/ingredientController.php");
 }else{
   require_once("controllers/404Controller.php");
 }

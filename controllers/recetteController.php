@@ -4,6 +4,8 @@
  * RECETTE CONTROLLER
  *************/
 require_once("models/recetteModel.php");
+require_once("models/ingredientModel.php");
+
 //List Create Read Update Delete
 if($action == "index"){
 
@@ -23,6 +25,7 @@ if($action == "index"){
 
   $id = $parameters["id"];
   $recette = recette_get_one($pdo, $id);
+  $ingredients = ingredient_get_all($pdo, $id);
 
   include("views/recette/show.php");
 
