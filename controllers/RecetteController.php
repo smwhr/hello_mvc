@@ -3,14 +3,14 @@
 /**************
  * RECETTE CONTROLLER
  *************/
-require_once("models/factories/recetteFactory.php");
-require_once("models/factories/ingredientFactory.php");
+require_once("models/factories/RecetteFactory.php");
+require_once("models/factories/IngredientFactory.php");
 
 //List Create Read Update Delete
 if($action == "index"){
 
   // recuperation des trucs dont je vais avoir besoin
-  $recetteFactory = new recetteFactory($pdo);
+  $recetteFactory = new RecetteFactory($pdo);
 
   //$recetteFactory->pdo = null; //error
   $recetteFactory->getIngredientSecret(); //error
@@ -27,7 +27,7 @@ if($action == "index"){
   $name = $_POST["name"];
 
   // recuperation des trucs dont je vais avoir besoin
-  $recetteFactory = new recetteFactory($pdo);
+  $recetteFactory = new RecetteFactory($pdo);
 
   // trucs qui font des trucs
   $new_id = $recetteFactory->add_one($name);
@@ -42,11 +42,11 @@ if($action == "index"){
   $id = $parameters["id"];
 
   // recuperation des trucs dont je vais avoir besoin
-  $recetteFactory = new recetteFactory($pdo);
+  $recetteFactory = new RecetteFactory($pdo);
   
   // trucs qui font des trucs
   $recette = $recetteFactory->get_one($id);
-  $ingredients = $recette->getIngredients();
+  $ingredients = $recette->getIngredients($pdo);
 
   // passage du résultat à la vue
   include("views/recette/show.php");

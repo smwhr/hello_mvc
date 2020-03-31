@@ -3,8 +3,8 @@
 /**************
  * INGREDIENT CONTROLLER
  *************/
-require_once("models/recetteModel.php");
-require_once("models/ingredientModel.php");
+require_once("models/factories/RecetteFactory.php");
+require_once("models/factories/IngredientFactory.php");
 
 //List Create Read Update Delete
 if($action == "add"){
@@ -14,7 +14,8 @@ if($action == "add"){
   $quantity = $_POST["quantity"];
   $unit = $_POST["unit"];
 
-  $new_id = ingredient_add_one($pdo, 
+  $ingredientFactory = new ingredientFactory($pdo);
+  $new_id = $ingredientFactory->add_one( 
                                   $recette_id, 
                                   $name, 
                                   $quantity,

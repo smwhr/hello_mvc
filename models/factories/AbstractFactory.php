@@ -1,6 +1,6 @@
 <?php
 
-abstract class abstractFactory{
+abstract class AbstractFactory{
   protected $pdo;
   
   public function __construct($pdo){

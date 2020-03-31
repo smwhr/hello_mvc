@@ -10,9 +10,10 @@ $url = $_SERVER["REQUEST_URI"];
 
 // on récupère le path
 $path = parse_url($url, PHP_URL_PATH);
+// /recette/index
 
 @list($null, $controller, $action) = explode("/", $path);
-
+            // recette    //index
 $controller = !empty($controller) ? $controller : "main";
 $action = $action ?? "index";
 
@@ -27,13 +28,13 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // on va décider du controller qui va gérer
 if($controller == "main"){
-  require_once("controllers/mainController.php");
+  require_once("controllers/MainController.php");
 }else if($controller == "hello"){
-  require_once("controllers/helloController.php");
+  require_once("controllers/HelloController.php");
 }else if($controller == "recette"){
-  require_once("controllers/recetteController.php");
+  require_once("controllers/RecetteController.php");
 }else if($controller == "ingredient"){
-  require_once("controllers/ingredientController.php");
+  require_once("controllers/IngredientController.php");
 }else{
   require_once("controllers/404Controller.php");
 }

@@ -1,9 +1,9 @@
 <?php
 
-require_once("models/factories/abstractFactory.php");
+require_once("models/factories/AbstractFactory.php");
 require_once("models/Ingredient.php");
 
-class ingredientFactory extends abstractFactory{
+class IngredientFactory extends AbstractFactory{
 
   public function get_all($recette_id){
 

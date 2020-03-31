@@ -4,7 +4,7 @@
  * HELLO CONTROLLER
  *************/
 
-require_once("models/userModel.php");
+require_once("models/UserModel.php");
 
 $correct_name = capitalize_name($parameters["name"]);
 

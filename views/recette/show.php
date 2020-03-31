@@ -14,8 +14,9 @@
           <?php echo $ingredient->name;?>
       </li>
     <?php endforeach ?>
+  </ul>
 
-    <form method="POST" action="/ingredient/add?recette_id=<?php echo $recette->id;?>">
+  <form method="POST" action="/ingredient/add?recette_id=<?php echo $recette->id;?>">
       <label>Name</label>
       <input type="text" name="name"><br>
       <label>Quantité</label>
