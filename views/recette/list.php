@@ -9,8 +9,8 @@
   <ul>
     <?php foreach ($recettes as $recette): ?>
       <li>
-        <a href="/recette/show?id=<?php echo $recette['id']?>">
-          <?php echo $recette["name"];?>
+        <a href="/recette/show?id=<?php echo $recette->id?>">
+          <?php echo $recette->name;?>
         </a>
       </li>
     <?php endforeach ?>
